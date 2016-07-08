@@ -1,11 +1,16 @@
-import React from "react";
-import { addCalc } from '../actions/index';
-import { connect } from 'react-redux';
+import React from 'react';
+import {addCalc} from '../actions/index';
+import {connect} from 'react-redux';
 
 export default class FirstPage extends React.Component {
+
+  propTypes: {
+    addCalc: React.PropTypes.any
+  }
+
   toggleAdd() {
     this.props.addCalc(5);
-  };
+  }
 
   render() {
     return (
@@ -18,4 +23,7 @@ export default class FirstPage extends React.Component {
   }
 }
 
-export default connect(null, { addCalc })(FirstPage);
+FirstPage.propTypes = {
+  addCalc: React.propTypes.any
+};
+export default connect(null, {addCalc})(FirstPage);

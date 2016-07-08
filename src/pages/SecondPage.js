@@ -1,11 +1,11 @@
-import React from "react";
-import { removeCalc } from '../actions/index';
-import { connect } from 'react-redux';
+import React from 'react';
+import {removeCalc} from '../actions/index';
+import {connect} from 'react-redux';
 
 export default class SecondPage extends React.Component {
   toggleAdd() {
     this.props.removeCalc(5);
-  };
+  }
 
   render() {
     return (
@@ -18,4 +18,7 @@ export default class SecondPage extends React.Component {
   }
 }
 
-export default connect(null, { removeCalc })(SecondPage);
+SecondPage.propTypes = {
+  removeCalc: React.propTypes.any
+};
+export default connect(null, {removeCalc})(SecondPage);

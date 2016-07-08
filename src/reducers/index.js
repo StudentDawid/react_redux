@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+import {combineReducers} from 'redux';
 import CalcReducer from './calc';
 
 const rootReducer = combineReducers({

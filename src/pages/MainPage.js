@@ -1,7 +1,7 @@
-import React from "react";
-import { IndexLink, Link } from "react-router";
-import { connect } from 'react-redux';
-import { addCalc } from '../actions/index';
+import React from 'react';
+import {IndexLink, Link} from 'react-router';
+import {connect} from 'react-redux';
+import {addCalc} from '../actions/index';
 import ReactInterval from 'react-interval';
 
 export default class MainPage extends React.Component {
@@ -13,7 +13,7 @@ export default class MainPage extends React.Component {
     return (
       <div>
         <h1>React Test</h1><br></br>
-        <IndexLink to="/"> firstpage </IndexLink>   <Link to="secondpage"> secondpage </Link><br></br>
+        <IndexLink to="/"> firstpage </IndexLink> <Link to="secondpage"> secondpage </Link><br></br>
 
         <br></br>
         <br></br>
@@ -32,7 +32,12 @@ export default class MainPage extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return { localCounter: state.calc.counter };
+  return {localCounter: state.calc.counter};
 }
 
-export default connect(mapStateToProps, { addCalc })(MainPage);
+MainPage.propTypes = {
+  addCalc: React.propTypes.any,
+  children: React.propTypes.any,
+  localCounter: React.propTypes.any
+};
+export default connect(mapStateToProps, {addCalc})(MainPage);
